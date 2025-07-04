@@ -194,7 +194,7 @@ const SkillsDisplay = () => {
           ))}
         </motion.div>
 
-        <motion.div
+       <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.6 }}
@@ -204,17 +204,37 @@ const SkillsDisplay = () => {
             {Object.values(skills)
               .flat()
               .map((skill, index) => {
-                const categoryIndex = Math.floor(index / 4);
-                const categoryColors = categories[categoryIndex % categories.length]?.colors;
+                // Add this function here
+                const getIconColor = (skillName) => {
+                  const colorMap = {
+                    'React': 'text-cyan-400',
+                    'TypeScript': 'text-blue-600',
+                    'Next.js': 'text-white',
+                    'Tailwind CSS': 'text-cyan-500',
+                    'Node.js': 'text-green-500',
+                    'Express': 'text-gray-300',
+                    'SpringBoot': 'text-green-600',
+                    'PHP': 'text-indigo-500',
+                    'Git': 'text-orange-500',
+                    'MongoDB': 'text-green-400',
+                    'MySQL': 'text-blue-500',
+                    'Python': 'text-yellow-400',
+                    'Java': 'text-orange-600',
+                    'C++': 'text-blue-400',
+                    'Kotlin': 'text-purple-500'
+                  };
+                  return colorMap[skillName] || 'text-purple-500';
+                };
+
                 return (
                   <div
                     key={skill.name}
                     className="flex items-center bg-gray-800/50 px-4 py-2 rounded-full border border-gray-700 hover:border-purple-500/50 transition-all"
                   >
                     {skill.icon && (
-                      <skill.icon className={`text-${categoryColors?.primary || 'purple-500'} mr-2`} size={18} />
+                      <skill.icon className={`${getIconColor(skill.name)} mr-2`} size={18} />
                     )}
-                    <span className="text-sm text-purple-500">{skill.name}</span>
+                    <span className="text-sm text-gray-300">{skill.name}</span>
                   </div>
                 );
               })}
