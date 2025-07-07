@@ -45,8 +45,12 @@ const EducationSection = () => {
       period: "2012 - 2020",
       description: (
         <ul className="list-disc pl-5 space-y-1">
-          <li>G.C.E. A/L (Physical Science Stream) - 2018-2020</li>
-          <li>G.C.E. O/L - 2017</li>
+          <li>G.C.E. A/L (Physical Science Stream) - 2018-2020
+            Mathematics - C, Physics - C, Chemistry -C
+          </li>
+          <li>G.C.E. O/L - 2017 <br />
+            A - 8 , C-1
+          </li>
         </ul>
       ),
       logo: Sc,
