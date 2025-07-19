@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import myImg from "./images/05 B.jpg";
+import myImg from "./images/03 BB.jpg";
 
 /**
  * @typedef {Object} AboutSectionProps
