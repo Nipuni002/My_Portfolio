@@ -4,6 +4,7 @@ import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
 import LogoImg from "./images/logo2.png";
 import Sc from "./images/S.png";
+import ES from "./images/Esoft.png";
 /**
  * @typedef {Object} EducationItem
  * @property {number} id
@@ -40,22 +41,32 @@ const EducationSection = () => {
     },
     {
       id: 2,
+      degree: "Diploma in Information Technology",
+      institution: "ESoft Metro Campus -Kurunegala",
+      period: "2022 - 2023",
+      description:
+        "Completed a Diploma in Information Technology with Merit pass.",
+      logo: ES,
+      type: "university",
+    },
+    {
+      id: 3,
       degree: "School Education",
       institution: "Ku/Ibbagamuwa Central College",
       period: "2012 - 2020",
       description: (
         <ul className="list-disc pl-5 space-y-1">
-          <li>G.C.E. A/L (Physical Science Stream) - 2018-2020
-            Mathematics - C, Physics - C, Chemistry -C
-          </li>
+          <li>G.C.E. A/L (Physical Science Stream) -  2020 <br />
+            Mathematics - C | Physics - C | Chemistry -C
+          </li> <br />
           <li>G.C.E. O/L - 2017 <br />
-            A - 8 , C-1
           </li>
         </ul>
       ),
       logo: Sc,
       type: "school",
     },
+    
   ];
 
   const containerVariants = {
