@@ -87,7 +87,7 @@ const ProjectCard = ({
                   <Button
                     size="sm"
                     variant="ghost"
-                    className="rounded-full p-2 text-slate-400 hover:bg-blue-500/20 hover:text-white"
+                    className="rounded-full p-2 text-slate-400 hover:bg-blue-500/20 hover:text-purple-500"
                     onClick={(e) => {
                       e.stopPropagation();
                       window.open(projectUrl, "_blank");
@@ -103,7 +103,7 @@ const ProjectCard = ({
                   <Button
                     size="sm"
                     variant="ghost"
-                    className="rounded-full p-2 text-slate-400 hover:bg-blue-500/20 hover:text-white"
+                    className="rounded-full p-2 text-slate-400 hover:bg-blue-500/20 hover:text-purple-500"
                     onClick={(e) => {
                       e.stopPropagation();
                       window.open(liveUrl, "_blank");
