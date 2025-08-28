@@ -267,8 +267,8 @@ const Home = () => {
       transition={{ duration: 0.5 }}
       className="text-center mb-12"
     >
-      <h2 className="text-3xl md:text-4xl font-bold mb-4 from-indigo-500 to-purple-500 relative inline-block">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">
+      <h2 className="text-3xl md:text-4xl font-bold mb-4 from-cyan-400 to-blue-500 relative inline-block">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
            Get In Touch
           </span>
           </h2>
@@ -403,12 +403,12 @@ const Home = () => {
                   <div>
                     <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400">GitHub</h4>
                     <a 
-                      href="https://github.com/shiranthaDS" 
+                      href="https://github.com/Nipuni002" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-base text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                     >
-                      github.com/shiranthaDS
+                      github.com/Nipuni002
                     </a>
                   </div>
                 </div>
@@ -421,7 +421,7 @@ const Home = () => {
               </h3>
               <div className="flex space-x-4">
                 <motion.a
-                  href="https://github.com/shiranthaDS"
+                  href="https://github.com/Nipuni002"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ y: -3 }}
@@ -430,7 +430,7 @@ const Home = () => {
                   <Github className="h-5 w-5 text-gray-700 dark:text-gray-300" />
                 </motion.a>
                 <motion.a
-                  href="https://linkedin.com/in/shiranthads"
+                  href="https://linkedin.com/in/Nipuni002"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ y: -3 }}

@@ -54,7 +54,7 @@ const ProjectCard = ({
         <CardContent className="flex h-[calc(100%-13rem)] flex-col justify-between p-6">
           <div>
             <motion.h3 
-              className="mb-3 text-xl font-bold text-white transition-colors duration-300 group-hover:text-blue-500"
+              className="mb-3 text-xl font-bold text-white transition-colors duration-300 group-hover:text-cyan-400 group-hover:to-blue-500"
               whileHover={{ x: 2 }}
             >
               {title}
@@ -71,7 +71,7 @@ const ProjectCard = ({
                 >
                   <Badge
                     variant="outline"
-                    className="border-slate-700 bg-slate-800/50 text-xs text-slate-200 transition-all duration-300 group-hover:border-pink-500/50 group-hover:bg-pink-500/10 group-hover:text-pink-200"
+                    className="border-slate-700 bg-slate-800/50 text-xs text-slate-200 transition-all duration-300 group-hover:bg-blue-500/20 group-hover:text-blue-200"
                   >
                     {tag}
                   </Badge>
@@ -87,7 +87,7 @@ const ProjectCard = ({
                   <Button
                     size="sm"
                     variant="ghost"
-                    className="rounded-full p-2 text-slate-400 hover:bg-pink-500/20 hover:text-white"
+                    className="rounded-full p-2 text-slate-400 hover:bg-blue-500/20 hover:text-white"
                     onClick={(e) => {
                       e.stopPropagation();
                       window.open(projectUrl, "_blank");
@@ -103,7 +103,7 @@ const ProjectCard = ({
                   <Button
                     size="sm"
                     variant="ghost"
-                    className="rounded-full p-2 text-slate-400 hover:bg-pink-500/20 hover:text-white"
+                    className="rounded-full p-2 text-slate-400 hover:bg-blue-500/20 hover:text-white"
                     onClick={(e) => {
                       e.stopPropagation();
                       window.open(liveUrl, "_blank");
@@ -123,7 +123,7 @@ const ProjectCard = ({
               <Button
                 size="sm"
                 variant="ghost"
-                className="group/btn flex items-center gap-1 rounded-full px-3 text-slate-300 hover:bg-pink-600/30 hover:text-purple-500"
+                className="group/btn flex items-center gap-1 rounded-full px-3 text-slate-300 hover:bg-blue-500/20 hover:text-purple-500"
                 onClick={(e) => {
                   e.stopPropagation();
                   if (projectUrl && projectUrl !== "#") {

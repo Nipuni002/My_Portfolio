@@ -68,7 +68,7 @@ const AboutSection = ({
         >
           <motion.div variants={itemVariants} className="order-2 md:order-1">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400">
                 About Me
               </span>
             </h2>

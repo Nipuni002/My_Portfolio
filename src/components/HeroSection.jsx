@@ -134,7 +134,7 @@ const HeroSection = ({
           transition={{ duration: 0.8 }}
         >
           <motion.h2
-            className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600"
+            className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
@@ -168,7 +168,7 @@ const HeroSection = ({
           >
             <Button
               onClick={onCtaClick}
-              className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-6 rounded-full text-lg font-medium shadow-[0_0_15px_rgba(79,70,229,0.5)] hover:shadow-[0_0_25px_rgba(79,70,229,0.7)] transition-all duration-300"
+              className="bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-6 rounded-full text-lg font-medium shadow-[0_0_15px_rgba(79,70,229,0.5)] hover:shadow-[0_0_25px_rgba(79,70,229,0.7)] transition-all duration-300"
             >
               {ctaText}
               <ArrowDownCircle className="ml-2 h-5 w-5" />
@@ -206,7 +206,7 @@ const HeroSection = ({
           transition={{ delay: 0.5, duration: 0.8 }}
         >
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-3xl opacity-20 animate-pulse" />
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-3xl opacity-20 animate-pulse" />
             <motion.div
               className="relative rounded-full overflow-hidden border-4 border-blue-500/30 shadow-[0_0_25px_rgba(59,130,246,0.5)] w-64 h-64 md:w-80 md:h-80"
               whileHover={{ scale: 1.05, rotate: 5 }}

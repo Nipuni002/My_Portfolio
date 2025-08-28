@@ -221,8 +221,8 @@ const App = () => {
         >
   <div className="container mx-auto px-4 max-w-4xl">
     <div className="text-center mb-12">
-      <h2 className="text-3xl md:text-4xl font-bold mb-4 from-indigo-500 to-purple-500 relative inline-block">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">
+      <h2 className="text-3xl md:text-4xl font-bold mb-4 from-cyan-400 to-blue-500 relative inline-block">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
            Get In Touch
           </span>
           </h2>
@@ -231,140 +231,159 @@ const App = () => {
       </p>
     </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {/* Contact Form */}
-      <Card className="p-8 bg-gray-900 border border-gray-800 rounded-xl">
-        <form className="space-y-6">
-          <div className="space-y-4">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                placeholder="Your Name"
-              />
-            </div>
+    <div className="max-w-4xl mx-auto">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    {/* Contact Information */}
+    <Card className="p-8 bg-gradient-to-br from-slate-900/70 to-slate-800/50 border border-slate-700/30 rounded-xl backdrop-blur-sm">
+      <div className="space-y-8">
+        <div>
+          <h3 className="text-2xl font-bold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
+            Get In Touch
+          </h3>
+          
+          <div className="space-y-6">
+            <motion.div 
+              className="flex items-start space-x-4 p-4 rounded-lg bg-slate-800/30 hover:bg-slate-800/50 transition-colors duration-300"
+              whileHover={{ x: 5 }}
+            >
+              <div className="flex-shrink-0 p-3 bg-cyan-500/10 rounded-lg border border-cyan-500/20">
+                <Mail className="h-5 w-5 text-cyan-400" />
+              </div>
+              <div>
+                <h4 className="text-sm font-medium text-slate-400 mb-1">Email</h4>
+                <a 
+                  href="mailto:thakshilaperera37@gmail.com" 
+                  className="text-base text-white hover:text-cyan-400 transition-colors duration-300"
+                >
+                  thakshilaperera37@gmail.com
+                </a>
+              </div>
+            </motion.div>
 
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                placeholder="your.email@example.com"
-              />
-            </div>
+            <motion.div 
+              className="flex items-start space-x-4 p-4 rounded-lg bg-slate-800/30 hover:bg-slate-800/50 transition-colors duration-300"
+              whileHover={{ x: 5 }}
+            >
+              <div className="flex-shrink-0 p-3 bg-blue-500/10 rounded-lg border border-blue-500/20">
+                <Linkedin className="h-5 w-5 text-blue-400" />
+              </div>
+              <div>
+                <h4 className="text-sm font-medium text-slate-400 mb-1">LinkedIn</h4>
+                <a 
+                  href="https://www.linkedin.com/in/thakshilaNP/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-base text-white hover:text-blue-400 transition-colors duration-300"
+                >
+                  linkedin.com/in/thakshilaNP
+                </a>
+              </div>
+            </motion.div>
 
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                Message
-              </label>
-              <textarea
-                id="message"
-                rows={5}
-                className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                placeholder="Your message here..."
-              />
-            </div>
+            <motion.div 
+              className="flex items-start space-x-4 p-4 rounded-lg bg-slate-800/30 hover:bg-slate-800/50 transition-colors duration-300"
+              whileHover={{ x: 5 }}
+            >
+              <div className="flex-shrink-0 p-3 bg-purple-500/10 rounded-lg border border-purple-500/20">
+                <Github className="h-5 w-5 text-purple-400" />
+              </div>
+              <div>
+                <h4 className="text-sm font-medium text-slate-400 mb-1">GitHub</h4>
+                <a 
+                  href="https://github.com/Nipuni002" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-base text-white hover:text-purple-400 transition-colors duration-300"
+                >
+                  github.com/Nipuni002
+                </a>
+              </div>
+            </motion.div>
           </div>
+        </div>
 
-          <Button className="w-full py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-medium rounded-lg transition-all">
-            Send Message
-          </Button>
-        </form>
-      </Card>
-
-      {/* Contact Information */}
-      <Card className="p-8 bg-gray-900 border border-gray-800 rounded-xl h-full">
-        <div className="space-y-8">
-          <div>
-            <h3 className="text-xl font-semibold text-white mb-6">Contact Information</h3>
-            
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 p-3 bg-purple-900/30 rounded-lg">
-                  <Mail className="h-5 w-5 text-purple-400" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-medium text-gray-400">Email</h4>
-                  <a 
-                    href="mailto:thakshilaperera37@gmail.com" 
-                    className="text-base text-white hover:text-purple-400 transition-colors"
-                  >
-                    thakshilaperera37@gmail.com
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 p-3 bg-purple-900/30 rounded-lg">
-                  <Linkedin className="h-5 w-5 text-purple-400" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-medium text-gray-400">LinkedIn</h4>
-                  <a 
-                    href="https://www.linkedin.com/in/thakshilaNP/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-base text-white hover:text-purple-400 transition-colors"
-                  >
-                    linkedin.com/in/thakshilaNP
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 p-3 bg-purple-900/30 rounded-lg">
-                  <Github className="h-5 w-5 text-purple-400" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-medium text-gray-400">GitHub</h4>
-                  <a 
-                    href="https://github.com/Nipuni002" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-base text-white hover:text-purple-400 transition-colors"
-                  >
-                    github.com/Nipuni002
-                  </a>
-                </div>
-              </div>
-            </div>
+        <div className="pt-6 border-t border-slate-700/50">
+          <h3 className="text-xl font-semibold text-white mb-6">Let's Connect</h3>
+          <p className="text-slate-400 mb-6">
+            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+          </p>
+          <div className="flex space-x-4">
+            <motion.a
+              href="https://github.com/Nipuni002"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ y: -3 }}
+              className="p-3 bg-slate-800/50 rounded-lg hover:bg-cyan-500/20 border border-slate-700/30 hover:border-cyan-500/30 transition-all duration-300 group"
+            >
+              <Github className="h-5 w-5 text-slate-300 group-hover:text-cyan-400" />
+            </motion.a>
+            <motion.a
+              href="https://www.linkedin.com/in/thakshilaNP/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ y: -3 }}
+              className="p-3 bg-slate-800/50 rounded-lg hover:bg-blue-500/20 border border-slate-700/30 hover:border-blue-500/30 transition-all duration-300 group"
+            >
+              <Linkedin className="h-5 w-5 text-slate-300 group-hover:text-blue-400" />
+            </motion.a>
           </div>
+        </div>
+      </div>
+    </Card>
 
-          <div className="pt-6 border-t border-gray-800">
-            <h3 className="text-xl font-semibold text-white mb-6">Follow Me</h3>
-            <div className="flex space-x-4">
-              <motion.a
-                href="https://github.com/Nipuni002"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ y: -3 }}
-                className="p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors"
-              >
-                <Github className="h-5 w-5 text-gray-300" />
-              </motion.a>
-              <motion.a
-                href="https://www.linkedin.com/in/thakshilaNP/"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ y: -3 }}
-                className="p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors"
-              >
-                <Linkedin className="h-5 w-5 text-purple-400" />
-              </motion.a>
-             
+    {/* Availability & Response Time */}
+    <Card className="p-8 bg-gradient-to-br from-slate-900/70 to-slate-800/50 border border-slate-700/30 rounded-xl backdrop-blur-sm">
+      <div className="space-y-8">
+        <div>
+          <h3 className="text-2xl font-bold text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
+            Availability
+          </h3>
+          
+          <div className="space-y-6">
+            <div className="p-4 rounded-lg bg-slate-800/30 border border-slate-700/30">
+              <div className="flex items-center mb-2">
+                <div className="h-2 w-2 rounded-full bg-green-500 mr-2 animate-pulse"></div>
+                <span className="text-sm font-medium text-green-400">Currently Available</span>
+              </div>
+              <p className="text-sm text-slate-400">I'm open to new opportunities and collaborations</p>
+            </div>
+
+            <div className="p-4 rounded-lg bg-slate-800/30 border border-slate-700/30">
+              <h4 className="text-sm font-medium text-slate-400 mb-2">Response Time</h4>
+              <p className="text-white">Within 24 hours</p>
+            </div>
+
+            <div className="p-4 rounded-lg bg-slate-800/30 border border-slate-700/30">
+              <h4 className="text-sm font-medium text-slate-400 mb-2">Preferred Contact Method</h4>
+              <p className="text-white">Email or LinkedIn</p>
             </div>
           </div>
         </div>
-      </Card>
-    </div>
-  </div>        </motion.section>
+
+        <div className="pt-6 border-t border-slate-700/50">
+          <h3 className="text-xl font-semibold text-white mb-4">What I Offer</h3>
+          <ul className="space-y-2">
+            <li className="flex items-center text-slate-300">
+              <div className="h-1 w-1 rounded-full bg-cyan-500 mr-3"></div>
+              Full-Stack Development
+            </li>
+            <li className="flex items-center text-slate-300">
+              <div className="h-1 w-1 rounded-full bg-cyan-500 mr-3"></div>
+              Web Application Development
+            </li>
+            <li className="flex items-center text-slate-300">
+              <div className="h-1 w-1 rounded-full bg-cyan-500 mr-3"></div>
+              Mobile App Development
+            </li>
+           
+          </ul>
+        </div>
+      </div>
+    </Card>
+  </div>
+</div>
+  </div>
+        </motion.section>
       </main>
 
       {/* Footer */}

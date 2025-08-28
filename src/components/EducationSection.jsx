@@ -52,7 +52,7 @@ const EducationSection = () => {
     {
       id: 3,
       degree: "School Education",
-      institution: "Ku/Ibbagamuwa Central College",
+      institution: "Ibbagamuwa Central College, Kurunegala",
       period: "2012 - 2020",
       description: (
         <ul className="list-disc pl-5 space-y-1">
@@ -100,7 +100,7 @@ const EducationSection = () => {
           transition={{ duration: 0.5 }}
           className="mb-12 text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-violet-500">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
             Education & Qualifications
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto">
@@ -117,7 +117,7 @@ const EducationSection = () => {
           className="relative"
         >
           {/* Timeline line */}
-          <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-gradient-to-b from-purple-600 to-blue-600 rounded-full hidden md:block" />
+          <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-gradient-to-b from-cyan-400 to-blue-500 rounded-full hidden md:block" />
 
           {educationData.map((item, index) => (
             <motion.div

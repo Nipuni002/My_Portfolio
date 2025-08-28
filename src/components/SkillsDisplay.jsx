@@ -1,9 +1,8 @@
-import React, { useEffect, useRef } from "react";
-import { motion, useAnimation, useInView } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import { Card, CardContent } from "./ui/card";
 import {
   SiReact,
-  SiTypescript,
   SiNextdotjs,
   SiTailwindcss,
   SiNodedotjs,
@@ -17,29 +16,11 @@ import {
   SiPython,
   SiJavascript,
   SiCplusplus,
-  
+
 } from "react-icons/si";
 import { FaServer, FaDatabase, FaTools } from "react-icons/fa";
 
-/**
- * @typedef {Object} Skill
- * @property {string} name
- * @property {number} level
- * @property {"frontend" | "backend" | "tools" | "other"} category
- * @property {import("react-icons").IconType} [icon]
- */
-
 const SkillsDisplay = () => {
-  const controls = useAnimation();
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.2 });
-
-  useEffect(() => {
-    if (isInView) {
-      controls.start("visible");
-    }
-  }, [controls, isInView]);
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -67,7 +48,6 @@ const SkillsDisplay = () => {
   const skills = {
     frontend: [
       { name: "React", level: 90, category: "frontend", icon: SiReact },
-      { name: "TypeScript", level: 85, category: "frontend", icon: SiTypescript },
       { name: "Next.js", level: 75, category: "frontend", icon: SiNextdotjs },
       { name: "Tailwind CSS", level: 85, category: "frontend", icon: SiTailwindcss },
     ],
@@ -81,13 +61,12 @@ const SkillsDisplay = () => {
       { name: "Git", level: 90, category: "tools", icon: SiGit },
       { name: "MongoDB", level: 80, category: "tools", icon: SiMongodb },
       { name: "MySQL", level: 85, category: "tools", icon: SiMysql },
-
     ],
-    other: [
-      { name: "Python", level: 75, category: "other", icon: SiPython },
-      { name: "Java", level: 90, category: "other", icon: SiJavascript },
-      { name: "C++", level: 75, category: "other", icon: SiCplusplus },
-      { name: "Kotlin", level: 80, category: "other", icon: SiKotlin },
+    languages: [
+      { name: "Python", level: 75, category: "languages", icon: SiPython },
+      { name: "Java", level: 90, category: "languages", icon: SiJavascript },
+      { name: "C++", level: 75, category: "languages", icon: SiCplusplus },
+      { name: "Kotlin", level: 80, category: "languages", icon: SiKotlin },
     ],
   };
 
@@ -97,11 +76,9 @@ const SkillsDisplay = () => {
       name: "Frontend", 
       icon: FaServer, 
       colors: {
-        primary: "purple-500",
-        secondary: "green-500",
-        gradient: "from-green-500 to-purple-500",
-        border: "green-500/30",
-        background: "from-green-500/10 to-purple-500/10"
+        primary: "text-cyan-400",
+        border: "border-cyan-500/30",
+        background: "from-cyan-500/5 to-blue-500/5"
       }
     },
     { 
@@ -109,38 +86,53 @@ const SkillsDisplay = () => {
       name: "Backend", 
       icon: FaDatabase, 
       colors: {
-        primary: "purple-500",
-        secondary: "green-500",
-        gradient: "from-purple-500 to-green-500",
-        border: "purple-500/30",
-        background: "from-purple-500/10 to-green-500/10"
+        primary: "text-emerald-400",
+        border: "border-emerald-500/30",
+        background: "from-emerald-500/5 to-green-500/5"
       }
     },
     { 
       id: "tools", 
-      name: "Additional Technology", 
+      name: "Tools & Databases", 
       icon: FaTools, 
       colors: {
-        primary: "purple-500",
-        secondary: "green-500",
-        gradient: "from-green-500 to-purple-500",
-        border: "green-500/30",
-        background: "from-green-500/10 to-purple-500/10"
+        primary: "text-amber-400",
+        border: "border-amber-500/30",
+        background: "from-amber-500/5 to-orange-500/5"
       }
     },
     { 
-      id: "other", 
-      name: "Programming Languages", 
+      id: "languages", 
+      name: "Languages", 
       icon: FaServer, 
       colors: {
-        primary: "purple-500",
-        secondary: "green-500",
-        gradient: "from-purple-500 to-green-500",
-        border: "purple-500/30",
-        background: "from-purple-500/10 to-green-500/10"
+        primary: "text-purple-400",
+        border: "border-purple-500/30",
+        background: "from-purple-500/5 to-indigo-500/5"
       }
     },
   ];
+
+  // Function to get the appropriate color for each technology icon
+  const getIconColor = (skillName) => {
+    const colorMap = {
+      'React': 'text-cyan-400 hover:text-cyan-300',
+      'Next.js': 'text-white hover:text-gray-200',
+      'Tailwind CSS': 'text-cyan-500 hover:text-cyan-400',
+      'Node.js': 'text-green-500 hover:text-green-400',
+      'Express': 'text-gray-300 hover:text-white',
+      'SpringBoot': 'text-green-600 hover:text-green-500',
+      'PHP': 'text-indigo-500 hover:text-indigo-400',
+      'Git': 'text-orange-500 hover:text-orange-400',
+      'MongoDB': 'text-green-400 hover:text-green-300',
+      'MySQL': 'text-blue-500 hover:text-blue-400',
+      'Python': 'text-yellow-400 hover:text-yellow-300',
+      'Java': 'text-orange-600 hover:text-orange-500',
+      'C++': 'text-blue-400 hover:text-blue-300',
+      'Kotlin': 'text-purple-500 hover:text-purple-400'
+    };
+    return colorMap[skillName] || 'text-purple-500 hover:text-purple-400';
+  };
 
   return (
     <section
@@ -155,37 +147,45 @@ const SkillsDisplay = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
               Technical Skills
             </span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            A comprehensive overview of my technical expertise and proficiency
-            levels across various technologies and tools.
+            A comprehensive overview of my technical expertise across various technologies and tools.
           </p>
         </motion.div>
 
         <motion.div
-          ref={ref}
           variants={containerVariants}
           initial="hidden"
-          animate={controls}
+          animate="visible"
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {categories.map((category) => (
             <motion.div key={category.id} variants={itemVariants}>
-              <Card className={`bg-gray-900/50 border-gray-800 backdrop-blur-sm overflow-hidden relative hover:border-${category.colors.border} transition-all duration-300`}>
-                <div className={`absolute inset-0 bg-gradient-to-br ${category.colors.background} z-0`}></div>
+              <Card className={`bg-gray-800/30 border ${category.colors.border} backdrop-blur-sm overflow-hidden relative group hover:shadow-lg transition-all duration-300`}>
+                <div className={`absolute inset-0 bg-gradient-to-br ${category.colors.background} opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0`}></div>
                 <CardContent className="p-6 relative z-10">
-                  <h3 className="text-xl font-bold mb-6 text-white flex items-center">
+                  <h3 className={`text-xl font-bold mb-6 flex items-center ${category.colors.primary}`}>
                     {category.icon && (
-                      <category.icon className={`text-${category.colors.primary} mr-3`} size={20} />
+                      <category.icon className="mr-3" size={20} />
                     )}
                     {category.name}
                   </h3>
-                  <div className="space-y-6">
-                    {skills[category.id]?.map((skill, index) => (
-                      <SkillBar key={skill.name} skill={skill} index={index} colors={category.colors} />
+                  <div className="grid grid-cols-2 gap-4">
+                    {skills[category.id]?.map((skill) => (
+                      <motion.div 
+                        key={skill.name}
+                        whileHover={{ scale: 1.05 }}
+                        className="flex flex-col items-center p-3 bg-gray-800/50 rounded-lg border border-gray-700 group-hover:border-gray-600 transition-colors"
+                      >
+                        <skill.icon 
+                          className={`${getIconColor(skill.name)} text-2xl mb-2 transition-colors`} 
+                          size={24} 
+                        />
+                        <span className="text-sm text-gray-300 text-center">{skill.name}</span>
+                      </motion.div>
                     ))}
                   </div>
                 </CardContent>
@@ -194,106 +194,18 @@ const SkillsDisplay = () => {
           ))}
         </motion.div>
 
-       <motion.div
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.6 }}
           className="mt-16 text-center"
         >
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            {Object.values(skills)
-              .flat()
-              .map((skill, index) => {
-                // Add this function here
-                const getIconColor = (skillName) => {
-                  const colorMap = {
-                    'React': 'text-cyan-400',
-                    'TypeScript': 'text-blue-600',
-                    'Next.js': 'text-white',
-                    'Tailwind CSS': 'text-cyan-500',
-                    'Node.js': 'text-green-500',
-                    'Express': 'text-gray-300',
-                    'SpringBoot': 'text-green-600',
-                    'PHP': 'text-indigo-500',
-                    'Git': 'text-orange-500',
-                    'MongoDB': 'text-green-400',
-                    'MySQL': 'text-blue-500',
-                    'Python': 'text-yellow-400',
-                    'Java': 'text-orange-600',
-                    'C++': 'text-blue-400',
-                    'Kotlin': 'text-purple-500'
-                  };
-                  return colorMap[skillName] || 'text-purple-500';
-                };
-
-                return (
-                  <div
-                    key={skill.name}
-                    className="flex items-center bg-gray-800/50 px-4 py-2 rounded-full border border-gray-700 hover:border-purple-500/50 transition-all"
-                  >
-                    {skill.icon && (
-                      <skill.icon className={`${getIconColor(skill.name)} mr-2`} size={18} />
-                    )}
-                    <span className="text-sm text-gray-300">{skill.name}</span>
-                  </div>
-                );
-              })}
-          </div>
           <p className="text-gray-400 italic">
-            Always learning and expanding my skillset with new technologies.
+            Continuously expanding my skillset with new technologies and best practices.
           </p>
         </motion.div>
       </div>
     </section>
-  );
-};
-
-/**
- * @typedef {Object} SkillBarProps
- * @property {Skill} skill
- * @property {number} index
- * @property {Object} colors
- */
-
-const SkillBar = ({ skill, index, colors }) => {
-  const controls = useAnimation();
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.5 });
-
-  useEffect(() => {
-    if (isInView) {
-      controls.start({
-        width: `${skill.level}%`,
-        transition: { duration: 1, delay: index * 0.1, ease: "easeOut" },
-      });
-    }
-  }, [controls, isInView, skill.level, index]);
-
-  return (
-    <div ref={ref} className="space-y-2">
-      <div className="flex justify-between items-center">
-        <div className="flex items-center">
-          {skill.icon && (
-            <skill.icon className={`text-${colors.primary} mr-2`} size={16} />
-          )}
-          <span className="text-sm font-medium text-gray-200">
-            {skill.name}
-          </span>
-        </div>
-        <span className="text-xs font-medium text-gray-400">
-          {skill.level}%
-        </span>
-      </div>
-      <div className="relative h-2 w-full bg-gray-800 rounded-full overflow-hidden">
-        <motion.div
-          initial={{ width: 0 }}
-          animate={controls}
-          className={`h-full rounded-full bg-gradient-to-r ${colors.gradient} relative`}
-        >
-          <div className="absolute top-0 right-0 bottom-0 w-2 bg-white/20 blur-sm"></div>
-        </motion.div>
-      </div>
-    </div>
   );
 };
 
