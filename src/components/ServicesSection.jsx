@@ -77,22 +77,10 @@ const ServicesSection = () => {
       gradient: "bg-gradient-to-br from-emerald-500/20 to-teal-500/20",
     },
     {
-      icon: <Database size={24} />,
-      title: "Database Design",
-      description: "Designing and optimizing database architectures with both SQL and NoSQL solutions for optimal performance.",
-      gradient: "bg-gradient-to-br from-amber-500/20 to-orange-500/20",
-    },
-    {
       icon: <Smartphone size={24} />,
       title: "Mobile Development",
       description: "Developing cross-platform mobile applications with React Native for consistent experiences across devices.",
       gradient: "bg-gradient-to-br from-violet-500/20 to-purple-500/20",
-    },
-    {
-      icon: <Cloud size={24} />,
-      title: "DevOps & Deployment",
-      description: "Implementing CI/CD pipelines and cloud deployment strategies for reliable and scalable application hosting.",
-      gradient: "bg-gradient-to-br from-blue-500/20 to-cyan-500/20",
     },
   ];
 
