@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "./ui/card";
+import { FaServer, FaDatabase, FaTools, FaCode } from "react-icons/fa";
 import {
   SiReact,
   SiNextdotjs,
@@ -16,9 +17,12 @@ import {
   SiPython,
   SiJavascript,
   SiCplusplus,
-
+  SiDocker,
+  SiKubernetes,
+  SiVercel,
+  SiGithubactions,
+  SiPostgresql,
 } from "react-icons/si";
-import { FaServer, FaDatabase, FaTools } from "react-icons/fa";
 
 const SkillsDisplay = () => {
   const containerVariants = {
@@ -46,93 +50,113 @@ const SkillsDisplay = () => {
   };
 
   const skills = {
-    frontend: [
-      { name: "React", level: 90, category: "frontend", icon: SiReact },
-      { name: "Next.js", level: 75, category: "frontend", icon: SiNextdotjs },
-      { name: "Tailwind CSS", level: 85, category: "frontend", icon: SiTailwindcss },
-    ],
-    backend: [
-      { name: "Node.js", level: 85, category: "backend", icon: SiNodedotjs },
-      { name: "Express", level: 80, category: "backend", icon: SiExpress },
-      { name: "SpringBoot", level: 85, category: "backend", icon: SiSpringboot },
-      { name: "PHP", level: 80, category: "backend", icon: SiPhp },
-    ],
-    tools: [
-      { name: "Git", level: 90, category: "tools", icon: SiGit },
-      { name: "MongoDB", level: 80, category: "tools", icon: SiMongodb },
-      { name: "MySQL", level: 85, category: "tools", icon: SiMysql },
-    ],
-    languages: [
-      { name: "Python", level: 75, category: "languages", icon: SiPython },
-      { name: "Java", level: 90, category: "languages", icon: SiJavascript },
-      { name: "C++", level: 75, category: "languages", icon: SiCplusplus },
-      { name: "Kotlin", level: 80, category: "languages", icon: SiKotlin },
-    ],
-  };
+  frontend: [
+    { name: "React", level: 90, category: "frontend", icon: SiReact },
+    { name: "Next.js", level: 75, category: "frontend", icon: SiNextdotjs },
+    { name: "Tailwind CSS", level: 85, category: "frontend", icon: SiTailwindcss },
+  ],
+  backend: [
+    { name: "Node.js", level: 85, category: "backend", icon: SiNodedotjs },
+    { name: "Express", level: 80, category: "backend", icon: SiExpress },
+    { name: "SpringBoot", level: 85, category: "backend", icon: SiSpringboot },
+    { name: "PHP", level: 80, category: "backend", icon: SiPhp },
+  ],
+  devops: [
+    { name: "Docker", level: 80, category: "devops", icon: SiDocker },
+    { name: "Kubernetes", level: 70, category: "devops", icon: SiKubernetes },
+    { name: "Vercel", level: 75, category: "devops", icon: SiVercel },
+    { name: "CI/CD (GitHub Actions)", level: 80, category: "devops", icon: SiGithubactions },
+  ],
+  databases: [
+    { name: "MongoDB", level: 80, category: "databases", icon: SiMongodb },
+    { name: "MySQL", level: 85, category: "databases", icon: SiMysql },
+    { name: "PostgreSQL", level: 80, category: "databases", icon: SiPostgresql },
+  ],
+  languages: [
+    { name: "Python", level: 75, category: "languages", icon: SiPython },
+    { name: "Java", level: 90, category: "languages", icon: SiJavascript },
+    { name: "C++", level: 75, category: "languages", icon: SiCplusplus },
+    { name: "Kotlin", level: 80, category: "languages", icon: SiKotlin },
+  ],
+};
 
   const categories = [
-    { 
-      id: "frontend", 
-      name: "Frontend", 
-      icon: FaServer, 
-      colors: {
-        primary: "text-cyan-400",
-        border: "border-cyan-500/30",
-        background: "from-cyan-500/5 to-blue-500/5"
-      }
-    },
-    { 
-      id: "backend", 
-      name: "Backend", 
-      icon: FaDatabase, 
-      colors: {
-        primary: "text-emerald-400",
-        border: "border-emerald-500/30",
-        background: "from-emerald-500/5 to-green-500/5"
-      }
-    },
-    { 
-      id: "tools", 
-      name: "Tools & Databases", 
-      icon: FaTools, 
-      colors: {
-        primary: "text-amber-400",
-        border: "border-amber-500/30",
-        background: "from-amber-500/5 to-orange-500/5"
-      }
-    },
-    { 
-      id: "languages", 
-      name: "Languages", 
-      icon: FaServer, 
-      colors: {
-        primary: "text-purple-400",
-        border: "border-purple-500/30",
-        background: "from-purple-500/5 to-indigo-500/5"
-      }
-    },
-  ];
+  { 
+    id: "frontend", 
+    name: "Frontend", 
+    icon: FaCode, 
+    colors: {
+      primary: "text-cyan-400",
+      border: "border-cyan-500/30",
+      background: "from-cyan-500/5 to-blue-500/5"
+    }
+  },
+  { 
+    id: "backend", 
+    name: "Backend", 
+    icon: FaServer, 
+    colors: {
+      primary: "text-emerald-400",
+      border: "border-emerald-500/30",
+      background: "from-emerald-500/5 to-green-500/5"
+    }
+  },
+  { 
+    id: "devops", 
+    name: "DevOps & Deployment", 
+    icon: FaTools, 
+    colors: {
+      primary: "text-amber-400",
+      border: "border-amber-500/30",
+      background: "from-amber-500/5 to-orange-500/5"
+    }
+  },
+  { 
+    id: "databases", 
+    name: "Databases", 
+    icon: FaDatabase, 
+    colors: {
+      primary: "text-purple-400",
+      border: "border-purple-500/30",
+      background: "from-purple-500/5 to-indigo-500/5"
+    }
+  },
+  { 
+    id: "languages", 
+    name: "Languages", 
+    icon: FaServer, 
+    colors: {
+      primary: "text-purple-400",
+      border: "border-purple-500/30",
+      background: "from-purple-500/5 to-indigo-500/5"
+    }
+  },
+];
 
   // Function to get the appropriate color for each technology icon
   const getIconColor = (skillName) => {
-    const colorMap = {
-      'React': 'text-cyan-400 hover:text-cyan-300',
-      'Next.js': 'text-white hover:text-gray-200',
-      'Tailwind CSS': 'text-cyan-500 hover:text-cyan-400',
-      'Node.js': 'text-green-500 hover:text-green-400',
-      'Express': 'text-gray-300 hover:text-white',
-      'SpringBoot': 'text-green-600 hover:text-green-500',
-      'PHP': 'text-indigo-500 hover:text-indigo-400',
-      'Git': 'text-orange-500 hover:text-orange-400',
-      'MongoDB': 'text-green-400 hover:text-green-300',
-      'MySQL': 'text-blue-500 hover:text-blue-400',
-      'Python': 'text-yellow-400 hover:text-yellow-300',
-      'Java': 'text-orange-600 hover:text-orange-500',
-      'C++': 'text-blue-400 hover:text-blue-300',
-      'Kotlin': 'text-purple-500 hover:text-purple-400'
-    };
-    return colorMap[skillName] || 'text-purple-500 hover:text-purple-400';
+  const colorMap = {
+    'React': 'text-cyan-400 hover:text-cyan-300',
+    'Next.js': 'text-white hover:text-gray-200',
+    'Tailwind CSS': 'text-cyan-500 hover:text-cyan-400',
+    'Node.js': 'text-green-500 hover:text-green-400',
+    'Express': 'text-gray-300 hover:text-white',
+    'SpringBoot': 'text-green-600 hover:text-green-500',
+    'PHP': 'text-indigo-500 hover:text-indigo-400',
+    'Git': 'text-orange-500 hover:text-orange-400',
+    'MongoDB': 'text-green-400 hover:text-green-300',
+    'MySQL': 'text-blue-500 hover:text-blue-400',
+    'Python': 'text-yellow-400 hover:text-yellow-300',
+    'Java': 'text-orange-600 hover:text-orange-500',
+    'C++': 'text-blue-400 hover:text-blue-300',
+    'Kotlin': 'text-purple-500 hover:text-purple-400',
+    'Docker': 'text-sky-400 hover:text-sky-300',
+    'Kubernetes': 'text-blue-500 hover:text-blue-400',
+    'Vercel': 'text-white hover:text-gray-200',
+    'CI/CD (GitHub Actions)': 'text-indigo-500 hover:text-indigo-400'
   };
+  return colorMap[skillName] || 'text-purple-500 hover:text-purple-400';
+};
 
   return (
     <section

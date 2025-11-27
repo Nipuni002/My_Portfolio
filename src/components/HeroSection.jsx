@@ -6,7 +6,7 @@ import {
   GithubIcon,
   LinkedinIcon,
 } from "lucide-react";
-import profileImg from "./images/05 B.jpg";
+import profileImg from "./images/new2.png";
 
 /**
  * @typedef {Object} HeroSectionProps

@@ -82,6 +82,13 @@ const ServicesSection = () => {
       description: "Developing cross-platform mobile applications with React Native for consistent experiences across devices.",
       gradient: "bg-gradient-to-br from-violet-500/20 to-purple-500/20",
     },
+    {
+      icon: < Database size={24} />,
+      title: "DevOps & Deployment",
+      description: "Implementing CI/CD pipelines, containerization with Docker, and orchestration with Kubernetes for seamless application deployment.",
+      gradient: "bg-gradient-to-br from-violet-500/20 to-purple-500/20",
+    },
+
   ];
 
   const containerVariants = {

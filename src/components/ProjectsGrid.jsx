@@ -7,6 +7,9 @@ import CompImg from "./images/comp.png";
 import StuImg from "./images/stu.png";
 import mindImg from "./images/mind.png";
 import FinaImg from "./images/Fina.png";
+import bloodImg from "./images/blood.png";
+import TravelImg from "./images/travel.png";
+
 
 const ProjectsGrid = ({ projects = defaultProjects }) => {
   const [filter, setFilter] = useState("all");
@@ -119,8 +122,24 @@ const ProjectsGrid = ({ projects = defaultProjects }) => {
 };
 
 const defaultProjects = [
-  {
+    {
     id: "1",
+    title: "Blood Donation Management System",
+    description: "Built a microservice-based blood donation platform using React, Node.js, and PostgreSQL with JWT authentication, appointment management, Docker containers, and Kubernetes deployment supported by GitHub Actions CI/CD.",
+    image: bloodImg,
+    technologies: ["React(vite)", "Node", "PostgreSQL", "Express", "Docker", "Kubernetes", "CI/CD"],
+    link: "https://github.com/Nipuni002/Blood-donation-system",
+  },
+   {
+    id: "2",
+    title: "Travel & Booking Accommodation System",
+    description: "Contributed to a full-stack MERN-based travel system using React, Node.js, Express, MongoDB, JWT authentication, PayPal SDK, and CI/CD with GitHub Actions. My key contribution was developing the Package Management module, including admin-managed travel packages, user package bookings, and secure booking workflows.",
+    image: TravelImg,
+    technologies: ["React", "Node", "MongoDB", "Express", "CI/CD"],
+    link: "https://github.com/Nipuni002/Booking-System",
+  },
+  {
+    id: "3",
     title: "Landscaping & Garden Service Management System",
     description: "This application developed using MERN stack. It provides a comprehensive solution for managing Landscaping and gardening services, includes features like service booking, customer management, and employee management.",
     image: LandImg,
@@ -128,7 +147,7 @@ const defaultProjects = [
     link: "https://github.com/Nipuni002/GreenScape",
   },
   {
-    id: "2",
+    id: "4",
     title: "Skin Care Consultation Management System",
     description: "This application developed using Spring Boot(java) and React.js. This platform combines AI technology, progress tracking, appointment management, and blog content to deliver a complete skincare solution.",
     image: SkinImg,
@@ -136,7 +155,7 @@ const defaultProjects = [
     link: "https://github.com/Nipuni002/Skin_Care_Consultation",
   },
   {
-    id: "3",
+    id: "5",
     title: "Online Computer Spare Parts Management System",
     description: "This web based project is implemeted following the Model-View-Controller (MVC) architecture, utillizing java as primary programming language.",
     image: CompImg,
@@ -144,7 +163,7 @@ const defaultProjects = [
     link: "https://github.com/Nipuni002/Online_Computer_Spare_Parts_System",
   },
   {
-    id: "4",
+    id: "6",
     title: "University Student Helpdesk Management System",
     description: "Developed the student online helpdesk using HTML,CSS, PHP. ",
     image: StuImg,
@@ -152,7 +171,7 @@ const defaultProjects = [
     link: "https://github.com/Nipuni002/University_Students_Online_Helpdesk",
   },
   {
-    id: "5",
+    id: "7",
     title: "MindSets Mobile App",
     description: "EchoZen is a mindfulness app designed to help users track their sleep, yoga, and meditation sessions effortlessly. ",
     image: mindImg,
@@ -160,13 +179,14 @@ const defaultProjects = [
     link: "https://github.com/Nipuni002/Mindsets_mobile_App",
   },
   {
-    id: "6",
+    id: "8",
     title: "Personal Finance Tracker",
     description: "BudgetBee is your friendly financial companion that helps you track expenses, set budgets, and save money effortlessly. With intuitive tools for monitoring spending patterns, setting monthly limits, and receiving smart alerts, BudgetBee ensures you're always in control of your finances. ",
     image: FinaImg,
     technologies: ["Kotlin", "Android Studio", "SQLite"],
     link: "https://github.com/Nipuni002/BudgetBee",
   },
+
 ];
 
 export default ProjectsGrid;
