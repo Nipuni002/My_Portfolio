@@ -22,6 +22,8 @@ import {
   SiVercel,
   SiGithubactions,
   SiPostgresql,
+  SiTypescript,
+  SiExpo,
 } from "react-icons/si";
 
 const SkillsDisplay = () => {
@@ -52,6 +54,8 @@ const SkillsDisplay = () => {
   const skills = {
   frontend: [
     { name: "React", level: 90, category: "frontend", icon: SiReact },
+    { name: "React Native", level: 80, category: "frontend", icon: SiReact },   // reuse React icon
+    { name: "Expo", level: 75, category: "frontend", icon: SiExpo },
     { name: "Next.js", level: 75, category: "frontend", icon: SiNextdotjs },
     { name: "Tailwind CSS", level: 85, category: "frontend", icon: SiTailwindcss },
   ],
@@ -72,11 +76,12 @@ const SkillsDisplay = () => {
     { name: "MySQL", level: 85, category: "databases", icon: SiMysql },
     { name: "PostgreSQL", level: 80, category: "databases", icon: SiPostgresql },
   ],
-  languages: [
+ languages: [
     { name: "Python", level: 75, category: "languages", icon: SiPython },
     { name: "Java", level: 90, category: "languages", icon: SiJavascript },
     { name: "C++", level: 75, category: "languages", icon: SiCplusplus },
     { name: "Kotlin", level: 80, category: "languages", icon: SiKotlin },
+    { name: "TypeScript", level: 80, category: "languages", icon: SiTypescript },
   ],
 };
 
@@ -137,6 +142,8 @@ const SkillsDisplay = () => {
   const getIconColor = (skillName) => {
   const colorMap = {
     'React': 'text-cyan-400 hover:text-cyan-300',
+    Expo: "text-black hover:text-gray-700",       
+    TypeScript: "text-blue-600 hover:text-blue-500",
     'Next.js': 'text-white hover:text-gray-200',
     'Tailwind CSS': 'text-cyan-500 hover:text-cyan-400',
     'Node.js': 'text-green-500 hover:text-green-400',

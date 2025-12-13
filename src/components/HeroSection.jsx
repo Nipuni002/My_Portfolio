@@ -19,7 +19,7 @@ import profileImg from "./images/New.png";
  */
 
 const HeroSection = ({
-  title = "Hi, I'm Thakshila Perera",
+  title = "Hi, I'm Nipuni Thakshila Perera",
   subtitle = "Full-Stack Developer",
   description = "I build modern, user-focused web applications with seamless front-end experiences and strong, scalable backend systems using the latest technologies.",
   ctaText = "View My Work",

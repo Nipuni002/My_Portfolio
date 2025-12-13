@@ -11,7 +11,7 @@ import myImg from "./images/Pro.png";
  */
 
 const AboutSection = ({
-  name = "Thakshila Perera",
+  name = "Nipuni Perera",
   bio = "I'm a passionate full-stack developer with expertise in creating modern web applications. With a strong foundation in both frontend and backend technologies, I strive to build intuitive, efficient, and visually appealing digital experiences.",
   skills = [
     "Frontend Development",

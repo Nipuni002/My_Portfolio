@@ -9,6 +9,7 @@ import mindImg from "./images/mind.png";
 import FinaImg from "./images/Fina.png";
 import bloodImg from "./images/blood.png";
 import TravelImg from "./images/travel.png";
+import FoodImg from "./images/Food.png";
 
 
 const ProjectsGrid = ({ projects = defaultProjects }) => {
@@ -172,6 +173,14 @@ const defaultProjects = [
   },
   {
     id: "7",
+    title: "Healthy Food Tips Mobile App",
+    description: "Healthy Food Tips Mobile App is a cross-platform React Native application that provides practical, science-based nutrition guidance. It offers daily food tips, meal planning, water tracking, and a favorites system for easy reference. Built with React Native, Expo, TypeScript, and Context API, the app features offline access, local data persistence, and an intuitive, user-friendly interface. It helps users improve hydration, maintain balanced diets, and adopt healthier lifestyle habits. Fully privacy-focused and free to use, the app works seamlessly on Android and iOS.",
+    image: FoodImg,
+    technologies: ["React Native", "Expo", "TypeScript"],
+    link: "https://github.com/Nipuni002/Healthy_Food_Tips-App.git",
+  },
+  {
+    id: "8",
     title: "MindSets Mobile App",
     description: "EchoZen is a mindfulness app designed to help users track their sleep, yoga, and meditation sessions effortlessly. ",
     image: mindImg,
@@ -179,7 +188,7 @@ const defaultProjects = [
     link: "https://github.com/Nipuni002/Mindsets_mobile_App",
   },
   {
-    id: "8",
+    id: "9",
     title: "Personal Finance Tracker",
     description: "BudgetBee is your friendly financial companion that helps you track expenses, set budgets, and save money effortlessly. With intuitive tools for monitoring spending patterns, setting monthly limits, and receiving smart alerts, BudgetBee ensures you're always in control of your finances. ",
     image: FinaImg,
