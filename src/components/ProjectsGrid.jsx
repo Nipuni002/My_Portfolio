@@ -10,6 +10,7 @@ import FinaImg from "./images/Fina.png";
 import bloodImg from "./images/blood.png";
 import TravelImg from "./images/travel.png";
 import FoodImg from "./images/Food.png";
+import AIchatbot from "./images/AIChat.png";
 
 
 const ProjectsGrid = ({ projects = defaultProjects }) => {
@@ -123,8 +124,16 @@ const ProjectsGrid = ({ projects = defaultProjects }) => {
 };
 
 const defaultProjects = [
-    {
+  {
     id: "1",
+    title: "AI Business Assistant (RAG Chatbot)",
+    description: "Developed a full-stack AI chatbot using Python (FastAPI) and Next.js that provides document-based, context-aware answers through Retrieval-Augmented Generation (RAG) with LangChain and ChromaDB, including secure JWT authentication and multi-format document support.",
+    image: AIchatbot,
+    technologies: ["Next.js", "Python", "LangChain", "chromaDB"],
+    link: "https://github.com/Nipuni002/Blood-donation-system",
+  },
+    {
+    id: "2",
     title: "Blood Donation Management System",
     description: "Built a microservice-based blood donation platform using React, Node.js, and PostgreSQL with JWT authentication, appointment management, Docker containers, and Kubernetes deployment supported by GitHub Actions CI/CD.",
     image: bloodImg,
@@ -132,7 +141,7 @@ const defaultProjects = [
     link: "https://github.com/Nipuni002/Blood-donation-system",
   },
    {
-    id: "2",
+    id: "3",
     title: "Travel & Booking Accommodation System",
     description: "Contributed to a full-stack MERN-based travel system using React, Node.js, Express, MongoDB, JWT authentication, PayPal SDK, and CI/CD with GitHub Actions. My key contribution was developing the Package Management module, including admin-managed travel packages, user package bookings, and secure booking workflows.",
     image: TravelImg,
@@ -140,7 +149,7 @@ const defaultProjects = [
     link: "https://github.com/Nipuni002/Booking-System",
   },
   {
-    id: "3",
+    id: "4",
     title: "Landscaping & Garden Service Management System",
     description: "This application developed using MERN stack. It provides a comprehensive solution for managing Landscaping and gardening services, includes features like service booking, customer management, and employee management.",
     image: LandImg,
@@ -148,7 +157,7 @@ const defaultProjects = [
     link: "https://github.com/Nipuni002/GreenScape",
   },
   {
-    id: "4",
+    id: "5",
     title: "Skin Care Consultation Management System",
     description: "This application developed using Spring Boot(java) and React.js. This platform combines AI technology, progress tracking, appointment management, and blog content to deliver a complete skincare solution.",
     image: SkinImg,
@@ -156,7 +165,7 @@ const defaultProjects = [
     link: "https://github.com/Nipuni002/Skin_Care_Consultation",
   },
   {
-    id: "5",
+    id: "6",
     title: "Online Computer Spare Parts Management System",
     description: "This web based project is implemeted following the Model-View-Controller (MVC) architecture, utillizing java as primary programming language.",
     image: CompImg,
@@ -164,7 +173,7 @@ const defaultProjects = [
     link: "https://github.com/Nipuni002/Online_Computer_Spare_Parts_System",
   },
   {
-    id: "6",
+    id: "7",
     title: "University Student Helpdesk Management System",
     description: "Developed the student online helpdesk using HTML,CSS, PHP. ",
     image: StuImg,
@@ -172,7 +181,7 @@ const defaultProjects = [
     link: "https://github.com/Nipuni002/University_Students_Online_Helpdesk",
   },
   {
-    id: "7",
+    id: "8",
     title: "Healthy Food Tips Mobile App",
     description: "Healthy Food Tips Mobile App is a cross-platform React Native application that provides practical, science-based nutrition guidance. It offers daily food tips, meal planning, water tracking, and a favorites system for easy reference. Built with React Native, Expo, TypeScript, and Context API, the app features offline access, local data persistence, and an intuitive, user-friendly interface. It helps users improve hydration, maintain balanced diets, and adopt healthier lifestyle habits. Fully privacy-focused and free to use, the app works seamlessly on Android and iOS.",
     image: FoodImg,
@@ -180,7 +189,7 @@ const defaultProjects = [
     link: "https://github.com/Nipuni002/Healthy_Food_Tips-App.git",
   },
   {
-    id: "8",
+    id: "9",
     title: "MindSets Mobile App",
     description: "EchoZen is a mindfulness app designed to help users track their sleep, yoga, and meditation sessions effortlessly. ",
     image: mindImg,
@@ -188,7 +197,7 @@ const defaultProjects = [
     link: "https://github.com/Nipuni002/Mindsets_mobile_App",
   },
   {
-    id: "9",
+    id: "10",
     title: "Personal Finance Tracker",
     description: "BudgetBee is your friendly financial companion that helps you track expenses, set budgets, and save money effortlessly. With intuitive tools for monitoring spending patterns, setting monthly limits, and receiving smart alerts, BudgetBee ensures you're always in control of your finances. ",
     image: FinaImg,
