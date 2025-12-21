@@ -130,7 +130,7 @@ const defaultProjects = [
     description: "Developed a full-stack AI chatbot using Python (FastAPI) and Next.js that provides document-based, context-aware answers through Retrieval-Augmented Generation (RAG) with LangChain and ChromaDB, including secure JWT authentication and multi-format document support.",
     image: AIchatbot,
     technologies: ["Next.js", "Python", "LangChain", "chromaDB"],
-    link: "https://github.com/Nipuni002/Blood-donation-system",
+    link: "https://github.com/Nipuni002/Business-Assistant-AI.git",
   },
     {
     id: "2",
