@@ -1,7 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Card, CardContent } from "./ui/card";
-import { FaServer, FaDatabase, FaTools, FaCode } from "react-icons/fa";
+import { 
+  FaServer, 
+  FaDatabase, 
+  FaTools, 
+  FaCode,
+  FaMobileAlt,
+  FaCloud,
+  FaLanguage
+} from "react-icons/fa";
 import {
   SiReact,
   SiNextdotjs,
@@ -9,9 +16,8 @@ import {
   SiNodedotjs,
   SiExpress,
   SiSpringboot,
-  SiMongodb,
   SiPhp,
-  SiGit,
+  SiMongodb,
   SiMysql,
   SiKotlin,
   SiPython,
@@ -24,7 +30,9 @@ import {
   SiPostgresql,
   SiTypescript,
   SiExpo,
+  SiReact as SiReactNative,
 } from "react-icons/si";
+import { Sparkles, Cpu, Terminal, Code2 } from "lucide-react";
 
 const SkillsDisplay = () => {
   const containerVariants = {
@@ -51,189 +59,289 @@ const SkillsDisplay = () => {
     },
   };
 
+  const cardVariants = {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
   const skills = {
-  frontend: [
-    { name: "React", level: 90, category: "frontend", icon: SiReact },
-    { name: "React Native", level: 80, category: "frontend", icon: SiReact },   // reuse React icon
-    { name: "Expo", level: 75, category: "frontend", icon: SiExpo },
-    { name: "Next.js", level: 75, category: "frontend", icon: SiNextdotjs },
-    { name: "Tailwind CSS", level: 85, category: "frontend", icon: SiTailwindcss },
-  ],
-  backend: [
-    { name: "Node.js", level: 85, category: "backend", icon: SiNodedotjs },
-    { name: "Express", level: 80, category: "backend", icon: SiExpress },
-    { name: "SpringBoot", level: 85, category: "backend", icon: SiSpringboot },
-    { name: "PHP", level: 80, category: "backend", icon: SiPhp },
-  ],
-  devops: [
-    { name: "Docker", level: 80, category: "devops", icon: SiDocker },
-    { name: "Kubernetes", level: 70, category: "devops", icon: SiKubernetes },
-    { name: "Vercel", level: 75, category: "devops", icon: SiVercel },
-    { name: "CI/CD (GitHub Actions)", level: 80, category: "devops", icon: SiGithubactions },
-  ],
-  databases: [
-    { name: "MongoDB", level: 80, category: "databases", icon: SiMongodb },
-    { name: "MySQL", level: 85, category: "databases", icon: SiMysql },
-    { name: "PostgreSQL", level: 80, category: "databases", icon: SiPostgresql },
-  ],
- languages: [
-    { name: "Python", level: 75, category: "languages", icon: SiPython },
-    { name: "Java", level: 90, category: "languages", icon: SiJavascript },
-    { name: "C++", level: 75, category: "languages", icon: SiCplusplus },
-    { name: "Kotlin", level: 80, category: "languages", icon: SiKotlin },
-    { name: "TypeScript", level: 80, category: "languages", icon: SiTypescript },
-  ],
-};
+    frontend: [
+      { name: "React", icon: SiReact },
+      { name: "React Native", icon: SiReactNative },
+      { name: "Next.js", icon: SiNextdotjs },
+      { name: "Expo", icon: SiExpo },
+      { name: "Tailwind CSS", icon: SiTailwindcss },
+    ],
+    backend: [
+      { name: "Node.js", icon: SiNodedotjs },
+      { name: "Express.js", icon: SiExpress },
+      { name: "Spring Boot", icon: SiSpringboot },
+      { name: "PHP", icon: SiPhp },
+    ],
+    devops: [
+      { name: "Docker", icon: SiDocker },
+      { name: "Kubernetes", icon: SiKubernetes },
+      { name: "Vercel", icon: SiVercel },
+      { name: "GitHub Actions", icon: SiGithubactions },
+    ],
+    databases: [
+      { name: "MongoDB", icon: SiMongodb },
+      { name: "MySQL", icon: SiMysql },
+      { name: "PostgreSQL", icon: SiPostgresql },
+    ],
+    languages: [
+      { name: "Python", icon: SiPython },
+      { name: "Java", icon: SiJavascript },
+      { name: "C++", icon: SiCplusplus },
+      { name: "Kotlin", icon: SiKotlin },
+      { name: "TypeScript", icon: SiTypescript },
+    ],
+  };
 
   const categories = [
-  { 
-    id: "frontend", 
-    name: "Frontend", 
-    icon: FaCode, 
-    colors: {
-      primary: "text-cyan-400",
-      border: "border-cyan-500/30",
-      background: "from-cyan-500/5 to-blue-500/5"
-    }
-  },
-  { 
-    id: "backend", 
-    name: "Backend", 
-    icon: FaServer, 
-    colors: {
-      primary: "text-emerald-400",
-      border: "border-emerald-500/30",
-      background: "from-emerald-500/5 to-green-500/5"
-    }
-  },
-  { 
-    id: "devops", 
-    name: "DevOps & Deployment", 
-    icon: FaTools, 
-    colors: {
-      primary: "text-amber-400",
-      border: "border-amber-500/30",
-      background: "from-amber-500/5 to-orange-500/5"
-    }
-  },
-  { 
-    id: "databases", 
-    name: "Databases", 
-    icon: FaDatabase, 
-    colors: {
-      primary: "text-purple-400",
-      border: "border-purple-500/30",
-      background: "from-purple-500/5 to-indigo-500/5"
-    }
-  },
-  { 
-    id: "languages", 
-    name: "Languages", 
-    icon: FaServer, 
-    colors: {
-      primary: "text-purple-400",
-      border: "border-purple-500/30",
-      background: "from-purple-500/5 to-indigo-500/5"
-    }
-  },
-];
+    { 
+      id: "frontend", 
+      name: "Frontend Development", 
+      icon: FaCode, 
+      colors: {
+        primary: "text-blue-500",
+        border: "border-blue-500/20",
+        background: "from-blue-500/5 to-blue-600/5",
+        badge: "bg-blue-500/10 text-blue-400"
+      },
+      description: "Building modern user interfaces and web applications"
+    },
+    { 
+      id: "backend", 
+      name: "Backend Development", 
+      icon: FaServer, 
+      colors: {
+        primary: "text-teal-500",
+        border: "border-teal-500/20",
+        background: "from-teal-500/5 to-teal-600/5",
+        badge: "bg-teal-500/10 text-teal-400"
+      },
+      description: "Server-side development and API creation"
+    },
+    { 
+      id: "devops", 
+      name: "DevOps & Deployment", 
+      icon: FaCloud, 
+      colors: {
+        primary: "text-amber-500",
+        border: "border-amber-500/20",
+        background: "from-amber-500/5 to-amber-600/5",
+        badge: "bg-amber-500/10 text-amber-400"
+      },
+      description: "Infrastructure and deployment automation"
+    },
+    { 
+      id: "databases", 
+      name: "Databases", 
+      icon: FaDatabase, 
+      colors: {
+        primary: "text-purple-500",
+        border: "border-purple-500/20",
+        background: "from-purple-500/5 to-purple-600/5",
+        badge: "bg-purple-500/10 text-purple-400"
+      },
+      description: "Data storage and management systems"
+    },
+    { 
+      id: "languages", 
+      name: "Programming Languages", 
+      icon: FaLanguage, 
+      colors: {
+        primary: "text-green-500",
+        border: "border-green-500/20",
+        background: "from-green-500/5 to-green-600/5",
+        badge: "bg-green-500/10 text-green-400"
+      },
+      description: "Core programming languages and frameworks"
+    },
+  ];
 
-  // Function to get the appropriate color for each technology icon
-  const getIconColor = (skillName) => {
-  const colorMap = {
-    'React': 'text-cyan-400 hover:text-cyan-300',
-    Expo: "text-black hover:text-gray-700",       
-    TypeScript: "text-blue-600 hover:text-blue-500",
-    'Next.js': 'text-white hover:text-gray-200',
-    'Tailwind CSS': 'text-cyan-500 hover:text-cyan-400',
-    'Node.js': 'text-green-500 hover:text-green-400',
-    'Express': 'text-gray-300 hover:text-white',
-    'SpringBoot': 'text-green-600 hover:text-green-500',
-    'PHP': 'text-indigo-500 hover:text-indigo-400',
-    'Git': 'text-orange-500 hover:text-orange-400',
-    'MongoDB': 'text-green-400 hover:text-green-300',
-    'MySQL': 'text-blue-500 hover:text-blue-400',
-    'Python': 'text-yellow-400 hover:text-yellow-300',
-    'Java': 'text-orange-600 hover:text-orange-500',
-    'C++': 'text-blue-400 hover:text-blue-300',
-    'Kotlin': 'text-purple-500 hover:text-purple-400',
-    'Docker': 'text-sky-400 hover:text-sky-300',
-    'Kubernetes': 'text-blue-500 hover:text-blue-400',
-    'Vercel': 'text-white hover:text-gray-200',
-    'CI/CD (GitHub Actions)': 'text-indigo-500 hover:text-indigo-400'
+  const getIconColor = (skillName, category) => {
+    const colorMap = {
+      'React': 'text-blue-400',
+      'React Native': 'text-blue-500',
+      'Expo': 'text-gray-800 dark:text-gray-200',
+      'TypeScript': 'text-blue-600',
+      'Next.js': 'text-gray-800 dark:text-gray-100',
+      'Tailwind CSS': 'text-cyan-500',
+      'Node.js': 'text-green-500',
+      'Express.js': 'text-gray-400',
+      'Spring Boot': 'text-green-600',
+      'PHP': 'text-indigo-500',
+      'Docker': 'text-sky-500',
+      'Kubernetes': 'text-blue-500',
+      'Vercel': 'text-gray-800 dark:text-gray-100',
+      'GitHub Actions': 'text-indigo-500',
+      'MongoDB': 'text-green-400',
+      'MySQL': 'text-blue-500',
+      'PostgreSQL': 'text-blue-600',
+      'Python': 'text-yellow-500',
+      'Java': 'text-orange-600',
+      'C++': 'text-blue-400',
+      'Kotlin': 'text-purple-500',
+    };
+    return colorMap[skillName] || 'text-gray-400';
   };
-  return colorMap[skillName] || 'text-purple-500 hover:text-purple-400';
-};
 
   return (
     <section
       id="skills"
-      className="py-20 bg-gradient-to-b from-gray-900 to-black min-h-screen flex items-center"
+      className="w-full py-20 md:py-28 bg-gradient-to-b from-slate-50 to-white dark:from-gray-900 dark:to-gray-950"
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
-              Technical Skills
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 dark:bg-blue-500/10 dark:border-blue-500/20 backdrop-blur-sm mb-6">
+            <Sparkles className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+            <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
+              Technical Expertise
+            </span>
+          </div>
+
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-teal-500 dark:from-blue-400 dark:to-teal-300">
+             Technical Skills
             </span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            A comprehensive overview of my technical expertise across various technologies and tools.
+
+          <motion.div
+            className="w-24 h-1 bg-gradient-to-r from-blue-600 to-teal-500 dark:from-blue-400 dark:to-teal-300 mx-auto mb-6 rounded-full"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          />
+
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
+            A comprehensive collection of technologies and tools I work with to build modern, scalable applications
           </p>
         </motion.div>
 
+        {/* Skills Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
-          animate="visible"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6"
         >
           {categories.map((category) => (
-            <motion.div key={category.id} variants={itemVariants}>
-              <Card className={`bg-gray-800/30 border ${category.colors.border} backdrop-blur-sm overflow-hidden relative group hover:shadow-lg transition-all duration-300`}>
-                <div className={`absolute inset-0 bg-gradient-to-br ${category.colors.background} opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0`}></div>
-                <CardContent className="p-6 relative z-10">
-                  <h3 className={`text-xl font-bold mb-6 flex items-center ${category.colors.primary}`}>
-                    {category.icon && (
-                      <category.icon className="mr-3" size={20} />
-                    )}
-                    {category.name}
-                  </h3>
-                  <div className="grid grid-cols-2 gap-4">
+            <motion.div
+              key={category.id}
+              variants={cardVariants}
+              whileHover={{ y: -5 }}
+              className="h-full"
+            >
+              <div className={`group relative h-full rounded-2xl border ${category.colors.border} bg-gradient-to-br from-white to-gray-50 dark:from-gray-800/50 dark:to-gray-900/50 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden`}>
+                {/* Background Pattern */}
+                <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(0,0,0,0.1)_1px,transparent_0)] bg-[size:20px_20px] dark:bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.1)_1px,transparent_0)] dark:bg-[size:20px_20px]" />
+                </div>
+
+                <div className="relative p-6">
+                  {/* Category Header */}
+                  <div className="flex items-start gap-3 mb-4">
+                    <div className={`p-3 rounded-xl bg-gradient-to-br ${category.colors.background} border ${category.colors.border}`}>
+                      <category.icon className={`h-5 w-5 ${category.colors.primary}`} />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">
+                        {category.name}
+                      </h3>
+                      <p className="text-gray-500 dark:text-gray-400 text-sm">
+                        {category.description}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Skills List */}
+                  <div className="space-y-3">
                     {skills[category.id]?.map((skill) => (
-                      <motion.div 
+                      <motion.div
                         key={skill.name}
-                        whileHover={{ scale: 1.05 }}
-                        className="flex flex-col items-center p-3 bg-gray-800/50 rounded-lg border border-gray-700 group-hover:border-gray-600 transition-colors"
+                        whileHover={{ x: 3 }}
+                        className="flex items-center gap-3 p-3 rounded-lg bg-gray-50/50 dark:bg-gray-800/30 border border-gray-200 dark:border-gray-700 group-hover:border-gray-300 dark:group-hover:border-gray-600 transition-all duration-300"
                       >
-                        <skill.icon 
-                          className={`${getIconColor(skill.name)} text-2xl mb-2 transition-colors`} 
-                          size={24} 
-                        />
-                        <span className="text-sm text-gray-300 text-center">{skill.name}</span>
+                        <div className="flex-shrink-0">
+                          <skill.icon 
+                            className={`h-5 w-5 ${getIconColor(skill.name, category.id)}`}
+                          />
+                        </div>
+                        <span className="text-sm font-medium text-gray-800 dark:text-gray-200">
+                          {skill.name}
+                        </span>
                       </motion.div>
                     ))}
                   </div>
-                </CardContent>
-              </Card>
+
+                  {/* Skill Count */}
+                  <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-800">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-gray-500 dark:text-gray-400">
+                        Technologies
+                      </span>
+                      <span className={`px-2 py-1 rounded-full text-xs font-semibold ${category.colors.badge}`}>
+                        {skills[category.id]?.length || 0}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           ))}
         </motion.div>
 
+        {/* Summary Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.6 }}
-          className="mt-16 text-center"
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800"
         >
-          <p className="text-gray-400 italic">
-            Continuously expanding my skillset with new technologies and best practices.
-          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-white dark:from-gray-800/50 dark:to-gray-900/50 border border-blue-100 dark:border-gray-700">
+              <Code2 className="h-8 w-8 text-blue-600 dark:text-blue-400 mx-auto mb-4" />
+              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Full-Stack Development</h4>
+              <p className="text-gray-600 dark:text-gray-400 text-sm">
+                End-to-end development from frontend to backend systems
+              </p>
+            </div>
+            
+            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-teal-50 to-white dark:from-gray-800/50 dark:to-gray-900/50 border border-teal-100 dark:border-gray-700">
+              <Cpu className="h-8 w-8 text-teal-600 dark:text-teal-400 mx-auto mb-4" />
+              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Modern Technologies</h4>
+              <p className="text-gray-600 dark:text-gray-400 text-sm">
+                Working with latest frameworks and tools
+              </p>
+            </div>
+            
+            <div className="text-center p-6 rounded-2xl bg-gradient-to-br from-purple-50 to-white dark:from-gray-800/50 dark:to-gray-900/50 border border-purple-100 dark:border-gray-700">
+              <Terminal className="h-8 w-8 text-purple-600 dark:text-purple-400 mx-auto mb-4" />
+              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Cross-Platform</h4>
+              <p className="text-gray-600 dark:text-gray-400 text-sm">
+                Web, mobile, and cloud-based solutions
+              </p>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
