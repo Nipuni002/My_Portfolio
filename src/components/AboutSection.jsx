@@ -8,7 +8,6 @@ import {
   Smartphone, 
   Database,
   Cpu,
-  ArrowRight,
   Zap
 } from "lucide-react";
 

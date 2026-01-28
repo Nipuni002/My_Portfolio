@@ -1,18 +1,15 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { 
-  Code, 
   Smartphone, 
   Server, 
   Database, 
   Cpu, 
   Cloud, 
-  GitBranch,
   Rocket,
   Shield,
   Zap,
   Sparkles,
-  Layers,
   Monitor
 } from "lucide-react";
 
