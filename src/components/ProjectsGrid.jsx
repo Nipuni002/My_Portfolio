@@ -11,6 +11,7 @@ import bloodImg from "./images/blood.png";
 import TravelImg from "./images/travel.png";
 import FoodImg from "./images/Food.png";
 import AIchatbot from "./images/AIChat.png";
+import SmartCity from "./images/smartcity.png";
 import { Sparkles, Filter } from "lucide-react";
 
 const ProjectsGrid = () => {
@@ -188,8 +189,16 @@ const defaultProjects = [
     technologies: ["Next.js", "Python", "LangChain", "ChromaDB"],
     link: "https://github.com/Nipuni002/Business-Assistant-AI.git",
   },
-  {
+   {
     id: "2",
+    title: "Smart City Issue Reporting Platform",
+    description: "A modern Smart City Issue Reporting Platform built using Go (Gin + GORM) and MySQL for a secure, scalable RESTful backend, with a fast, responsive React (Vite) frontend powered by JWT-based authentication.",
+    image: SmartCity,
+    technologies: ["Go", "Gin", "GORM", "MySQL", "React", "Vite"],
+    link: "https://github.com/Nipuni002/Smart-City-Issue-Reporting-Platform.git",
+  },
+  {
+    id: "3",
     title: "Blood Donation Management System",
     description: "Built a microservice-based blood donation platform using React, Node.js, and PostgreSQL with JWT authentication, appointment management, Docker containers, and Kubernetes deployment supported by GitHub Actions CI/CD.",
     image: bloodImg,
@@ -197,7 +206,7 @@ const defaultProjects = [
     link: "https://github.com/Nipuni002/Blood-donation-system",
   },
   {
-    id: "3",
+    id: "4",
     title: "Travel & Booking Accommodation System",
     description: "Contributed to a full-stack MERN-based travel system using React, Node.js, Express, MongoDB, JWT authentication, PayPal SDK, and CI/CD with GitHub Actions. Developed the Package Management module with admin-managed travel packages and user booking workflows.",
     image: TravelImg,
@@ -205,7 +214,7 @@ const defaultProjects = [
     link: "https://github.com/Nipuni002/Booking-System",
   },
   {
-    id: "4",
+    id: "5",
     title: "Landscaping & Garden Service Management",
     description: "Comprehensive MERN stack solution for managing landscaping and gardening services, featuring service booking, customer management, and employee management systems.",
     image: LandImg,
@@ -213,7 +222,7 @@ const defaultProjects = [
     link: "https://github.com/Nipuni002/GreenScape",
   },
   {
-    id: "5",
+    id: "6",
     title: "Skin Care Consultation Management System",
     description: "Spring Boot and React.js platform combining AI technology, progress tracking, appointment management, and blog content to deliver a complete skincare solution.",
     image: SkinImg,
@@ -221,7 +230,7 @@ const defaultProjects = [
     link: "https://github.com/Nipuni002/Skin_Care_Consultation",
   },
   {
-    id: "6",
+    id: "7",
     title: "Computer Spare Parts Management System",
     description: "Web-based project implemented following Model-View-Controller architecture using Java, JSP, MySQL, and Bootstrap for an online computer parts management solution.",
     image: CompImg,
@@ -229,7 +238,7 @@ const defaultProjects = [
     link: "https://github.com/Nipuni002/Online_Computer_Spare_Parts_System",
   },
   {
-    id: "7",
+    id: "8",
     title: "University Student Helpdesk System",
     description: "Developed a student online helpdesk system using HTML, CSS, and PHP to streamline student support and query management.",
     image: StuImg,
@@ -237,7 +246,7 @@ const defaultProjects = [
     link: "https://github.com/Nipuni002/University_Students_Online_Helpdesk",
   },
   {
-    id: "8",
+    id: "9",
     title: "Healthy Food Tips Mobile App",
     description: "Cross-platform React Native app providing science-based nutrition guidance with daily tips, meal planning, water tracking, and offline access built with Expo and TypeScript.",
     image: FoodImg,
@@ -245,7 +254,7 @@ const defaultProjects = [
     link: "https://github.com/Nipuni002/Healthy_Food_Tips-App.git",
   },
   {
-    id: "9",
+    id: "10",
     title: "MindSets Mobile App",
     description: "Mindfulness Android app built with Kotlin to help users track sleep, yoga, and meditation sessions for improved mental wellbeing.",
     image: mindImg,
@@ -253,7 +262,7 @@ const defaultProjects = [
     link: "https://github.com/Nipuni002/Mindsets_mobile_App",
   },
   {
-    id: "10",
+    id: "11",
     title: "Personal Finance Tracker",
     description: "Android finance app developed with Kotlin and SQLite for expense tracking, budget setting, and financial management with intuitive tools and smart alerts.",
     image: FinaImg,

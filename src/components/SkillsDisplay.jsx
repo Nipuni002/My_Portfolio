@@ -31,6 +31,7 @@ import {
   SiTypescript,
   SiExpo,
   SiReact as SiReactNative,
+  SiGo,
 } from "react-icons/si";
 import { Sparkles, Cpu, Terminal, Code2 } from "lucide-react";
 
@@ -84,6 +85,7 @@ const SkillsDisplay = () => {
       { name: "Express.js", icon: SiExpress },
       { name: "Spring Boot", icon: SiSpringboot },
       { name: "PHP", icon: SiPhp },
+      { name: "Golang", icon: SiGo },
     ],
     devops: [
       { name: "Docker", icon: SiDocker },
